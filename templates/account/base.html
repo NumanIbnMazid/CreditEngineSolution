@@ -1,0 +1,66 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>{% trans 'Credit Engine Solution || Numan Ibn Mazid' %}</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ========================= Styles ========================= -->
+  {% include "components/styles.html" %}
+  {% block additional_styles %}{% endblock %}
+  <!-- ========================= /Styles ========================= -->
+  <!-- ========================= jQuery ========================= -->
+  <script src="{% static 'vendors/jQuery/jquery.min.js' %}"></script>
+  <!-- ========================= /jQuery ========================= -->
+</head>
+
+<body>
+  <!-- Preloader -->
+  {% include "components/preloader.html" %}
+  <!-- /End Preloader -->
+
+  <!-- Start Header Area -->
+  {% include "components/header.html" %}
+  <!-- End Header Area -->
+
+  <!-- BEGIN: Messages -->
+  {% include 'snippets/messages.html' %}
+  <!-- END: Messages -->
+
+  <div class="row mx-auto justify-content-center" style="margin-top:150px !important; margin-bottom: 150px !important;">
+    <div class="col-5">
+      <!-- ******* Start Content Block ******* -->
+      {% block content %}{% endblock %}
+      <!-- ******* End Content Block ******* -->
+    </div>
+    
+  </div>
+
+
+  <!-- Start Footer Area -->
+  {% include "components/footer.html" %}
+  <!--/ End Footer Area -->
+
+  <!-- Start Hidden Inputs -->
+  {% include "components/hidden-inputs.html" %}
+  <!--/ End Hidden Inputs -->
+
+  <!-- ========================= scroll-top ========================= -->
+  <a href="#" class="scroll-top">
+    <i class="lni lni-chevron-up"></i>
+  </a>
+
+  <!-- ========================= Scripts ========================= -->
+  {% include "components/scripts.html" %}
+  {% block additional_scripts %}{% endblock %}
+  <!-- ========================= /Scripts ========================= -->
+
+</body>
+
+</html>

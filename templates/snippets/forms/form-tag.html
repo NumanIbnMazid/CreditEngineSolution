@@ -1,0 +1,14 @@
+{% load crispy_forms_tags %}
+
+{% block additional_styles %}
+{{ form.media.css }}
+{% endblock %}
+    
+    
+<!-- main form -->
+
+{% crispy form %}
+
+{% block additional_scripts %}
+{{ form.media.js }}
+{% endblock %}

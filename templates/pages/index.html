@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% block additional_styles %}
+{{ form.media.css }}
+{% endblock %}
+
+{% block content %}
+
+<!-- Start Hero Area -->
+<section class="hero-area">
+    {% include "pages/snippets/index/weather-widget.html" %}
+</section>
+<!-- End Hero Area -->
+
+<!-- Start Services Area -->
+<div class="services section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h3 class="wow zoomIn" data-wow-delay=".2s">What we offer</h3>
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">Our Services</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+                        Ipsum available, but the majority have suffered alteration in some form.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
+                <div class="single-service">
+                    <div class="main-icon">
+                        <i class="lni lni-grid-alt"></i>
+                    </div>
+                    <h4 class="text-title">Brand Identity Design</h4>
+                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
+                        market.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
+                <div class="single-service">
+                    <div class="main-icon">
+                        <i class="lni lni-keyword-research"></i>
+                    </div>
+                    <h4 class="text-title">Digital Marketing</h4>
+                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
+                        market.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s">
+                <div class="single-service">
+                    <div class="main-icon">
+                        <i class="lni lni-vector"></i>
+                    </div>
+                    <h4 class="text-title">Design and Development</h4>
+                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
+                        market.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
+                <div class="single-service">
+                    <div class="main-icon">
+                        <i class="lni lni-book"></i>
+                    </div>
+                    <h4 class="text-title">IT Consulting Service</h4>
+                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
+                        market.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
+                <div class="single-service">
+                    <div class="main-icon">
+                        <i class="lni lni-cloud-network"></i>
+                    </div>
+                    <h4 class="text-title">Cloud Computing</h4>
+                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
+                        market.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s">
+                <div class="single-service">
+                    <div class="main-icon">
+                        <i class="lni lni-display-alt"></i>
+                    </div>
+                    <h4 class="text-title">Graphics Design</h4>
+                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
+                        market.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Services Area -->
+
+<!-- Start About Area -->
+<section class="about section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-12">
+                <div class="image wow fadeInLeft" data-wow-delay=".2s">
+                    <img src="{% static 'assets/images/about/about-image.jpg' %}" alt="#">
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="content wow fadeInRight" data-wow-delay=".4s">
+                    <h4>DECENTRALISED ECONOMY</h4>
+                    <h2>We’ve built a platform to buy and sell shares.</h2>
+                    <p>Spend real fights effective anything extra by leading. Mouthwatering leading how real formula
+                        also locked-in have can mountain thought. Jumbo plus shine sale.</p>
+                    <div class="list">
+                        <div class="single-list">
+                            <div class="list-icon">
+                                <i class="lni lni-checkmark"></i>
+                            </div>
+                            <h4>Digital Marketing</h4>
+                            <p>Quis autem vel eum reprehenderit</p>
+                        </div>
+                        <div class="single-list">
+                            <div class="list-icon">
+                                <i class="lni lni-checkmark"></i>
+                            </div>
+                            <h4>Graphics Desing</h4>
+                            <p>Quis autem vel eum reprehenderit</p>
+                        </div>
+                        <div class="single-list">
+                            <div class="list-icon">
+                                <i class="lni lni-checkmark"></i>
+                            </div>
+                            <h4>Consulting Service</h4>
+                            <p>Quis autem vel eum reprehenderit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End About Area -->
+
+<!-- Start Call Action Area -->
+<section class="call-action">
+    <div class="container">
+        <div class="inner-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-7 col-12">
+                    <div class="text">
+                        <h2>You are using free
+                            <br> <span>Lite version of Craft.</span>
+                        </h2>
+                        <p style="display: block;margin-top: 10px;">Please, purchase full version of the template to
+                            get all pages,
+                            features and commercial license. </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5 col-12">
+                    <div class="button">
+                        <a href="#" class="btn">Buy Pro Version
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Call Action Area -->
+
+{% endblock %}
+
+{% block additional_scripts %}
+
+{{ form.media.js }}
+
+<!-- BEGIN: Ajax Setup-->
+<script src="{% static 'assets/js/ajax-setup.js' %}"></script>
+<!-- END: Ajax Setup-->
+
+<script>
+    $(document).ready(function () {
+
+        // weather form
+        let weatherForm = $("#weather-form")
+        // current language code
+        currentLanguageCode = $("#current-language-code").val()
+
+        // HTML simulator function
+        function simulateHTML(htmlDataObject) {
+            $.each(htmlDataObject, function (key, val) {
+                $(key).html(val);
+            })
+        }
+
+        // Ajax request function
+        function ajaxRequest(form) {
+            // Set Request Header for Ajax Call
+            setRequestHeader()
+            // serialize the data for sending the form data.
+            var serializedData = form.serialize()
+            // make POST ajax call
+            $.ajax({
+                // contentType: "application/json; charset=utf-8",
+                // dataType: "json",
+                type: 'POST',
+                url: "{% url 'weather_forecast' %}",
+                data: serializedData,
+                success: function (response) {
+                    htmlDataObject = {
+                        "#city": response.name + ", " + response.sys.country,
+                        "#temp-farenhite": response.main.temp,
+                        "#temp-celcius": response.main.temp_celcius,
+                        "#temp-max": response.main.temp_max,
+                        "#temp-min": response.main.temp_min,
+                        "#condition": response.weather[0].main,
+                        "#weather-description": response.weather[0].description,
+                        "#humidity": response.main.humidity,
+                        "#wind": response.wind.deg,
+                        "#hpa": response.main.pressure,
+                        "#feels": response.main.feels_like
+                    }
+                    // simulate HTML
+                    simulateHTML(htmlDataObject)
+                    // set condition icon
+                    $("#condition-icon").attr("src", "https://openweathermap.org/img/w/" + response
+                        .weather[0].icon + ".png")
+                },
+                error: function (response) {
+                    htmlDataObject = {
+                        ".weather-tag": "--",
+                        "#city": JSON.parse(response.responseText).message
+                    }
+                    // simulate HTML
+                    simulateHTML(htmlDataObject)
+                    // set condition icon blank
+                    $("#condition-icon").attr("src", "")
+                }
+            })
+        }
+
+
+        $('#id_city').on('change', function () {
+            // document.forms["weatherForm"].submit()
+            var $form = $(this).closest('form')
+            $form.find('input[type=submit]').click()
+        })
+
+        // Simulate Weather Data
+        /*
+        On submiting the form, send the POST ajax
+        request to server and after successfull submission
+        display the object.
+        */
+        $("#weather-form").submit(function (e) {
+            // preventing from page reload and default actions
+            e.preventDefault()
+            // make ajax request
+            ajaxRequest(form=weatherForm)
+        })
+
+
+        // get initial weather data
+        $(function () {
+            let cityMap = {
+                "en": "London",
+                "bn": "Dhaka",
+                "ja": "Tokyo"
+            }
+
+            // set initial city value
+            if (currentLanguageCode in cityMap) {
+                $('#id_city').append(new Option(cityMap[currentLanguageCode], cityMap[currentLanguageCode], true, true))
+            } else {
+                $('#id_city').append(new Option("London", "London", true, true))
+            }
+
+            // make ajax request
+            ajaxRequest(form=weatherForm)
+
+            // prevent form resubmission on page refresh
+            if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href )
+            }
+        })
+    })
+</script>
+
+{% endblock %}

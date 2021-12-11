@@ -1,0 +1,102 @@
+/* 
+Custom Stylesheet
+Author: Numan Ibn Mazid [numanibnmazid@gmail.com]
+*/
+
+.weather-panel {
+    margin-top: 40px;
+}
+
+.brand-title {
+    display: block;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 1.5em;
+    text-align: center;
+    color: #000;
+}
+
+.navbar-brand h1 {
+    -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(left, #A3F7BF 0%, #29A19C 33%, #5d7f8d 66%, #80dfc1 100%);
+    background-size: 700px;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    background-clip: text;
+    -webkit-animation: gradient-move 50s linear infinite;
+    animation: gradient-move 45s linear infinite;
+}
+
+.navbar-brand h1:hover {
+    -webkit-animation: gradient-move 23s linear infinite;
+}
+
+@-webkit-keyframes gradient-move {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 700px 0;
+    }
+}
+
+
+/* start select-2 style customization */
+.select2-selection__rendered {
+    color: #327ff3 !important;
+}
+
+.select2-selection__arrow {
+    margin-top: 5px !important;
+    margin-right: 5px !important;
+    font-size: 23px !important;
+}
+
+.select2-selection__clear {
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+    color: rgb(228, 55, 55) !important;
+    font-size: 20px !important;
+}
+
+.select2 .selection {
+    width: 100% !important;
+}
+
+/* end select-2 style customization */
+
+/* starts digital clock styles */
+
+.digital-clock {
+    margin: auto;
+    position: relative;
+    width: 89px;
+    height: 29px;
+    color: #3FB4B5;
+    border: 2px solid #999;
+    border-radius: 4px;
+    text-align: center;
+    font: 17px/27px 'DIGITAL', Helvetica;
+    background: linear-gradient(90deg, #000, #555);
+}
+
+/* ends digital clock styles */
+
+/* starts weather image customization */
+
+.weather-image {
+    min-height: 123px;
+    min-width: 123px;
+}
+
+/* ends weather image customization */
+
+/* starts hero area customization */
+
+.hero-area {
+    background-image: url("../images/bg.288634100caa.jpg");
+}
+
+/* ends hero area customization */

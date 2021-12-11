@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "CreditEngineSolution"
+version = "0.1.0"
+description = "Solution of Credit Engine Application Test"
+authors = ["NumanIbnMazid <numanibnmazid@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^4.0"
+dj-database-url = "^0.5.0"
+python-dotenv = "^0.19.2"
+whitenoise = "^5.3.0"
+psycopg2-binary = "^2.9.2"
+autopep8 = "^1.6.0"
+django-crispy-forms = "^1.13.0"
+django-rosetta = "^0.9.7"
+django-select2 = "^7.9.0"
+django-redis = "^5.1.0"
+python-memcached = "^1.59"
+django-allauth = "^0.47.0"
+gunicorn = "^20.1.0"
+tzdata = "^2021.5"
+django-cors-headers = "^3.10.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

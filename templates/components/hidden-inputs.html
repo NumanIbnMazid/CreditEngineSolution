@@ -1,0 +1,5 @@
+{% load i18n %}
+
+<!-- store current language code in a hidden input field -->
+{% get_current_language as LANGUAGE_CODE %}
+<input type="hidden" value="{{ LANGUAGE_CODE }}" id="current-language-code" name="current-language-code">
