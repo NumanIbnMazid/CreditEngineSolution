@@ -13,7 +13,7 @@ RUN apk update \
     && apk add --virtual build-deps gcc python3-dev musl-dev jpeg-dev zlib-dev openssl-dev cargo \
     && apk add postgresql-dev gcc python3-dev musl-dev jpeg-dev zlib-dev openssl-dev cargo \
     && apk del build-deps \
-    && apk --no-cache add musl-dev libffi-dev linux-headers g++
+    && apk --no-cache add bash musl-dev libffi-dev linux-headers g++
 
 # install dependencies
 COPY ./requirements.txt .
