@@ -1,48 +1,38 @@
 # Credit Engine Solution
 
-[![Build status](https://gitlab.com/thorgate-public/django-project-template/badges/master/pipeline.svg)](https://gitlab.com/thorgate-public/django-project-template/commits/master)
+[Live URL](https://creditenginesolution.herokuapp.com/) : <https://creditenginesolution.herokuapp.com/>
 
-[Django](https://www.djangoproject.com/) project template that we use at [Thorgate](https://thorgate.eu).
+## Modules
 
-Best suited for medium-sized and bigger apps that use JavaScript and React for frontend or single page web applications.
-
-_(note that the primary repo is in [Gitlab](https://gitlab.com/thorgate-public/django-project-template), with mirror in [Github](https://github.com/thorgate/django-project-template))_
-
+- Weather Module
+- Users Module
 
 ## Features
 
-- Django-based backend
-
-    - [Django](https://www.djangoproject.com/)
-    - Separate settings for different environments (local/staging/production)
-    - Python 3.6 or later
-    - [SPA] Accessible from port `3000` for local development
-
-- Frontend app with JavaScript (ES2015), React and Sass
-
-    - Latest JavaScript features from [ES2015](https://babeljs.io/docs/learn-es2015/) and beyond, transpiled with
-      [Babel](https://babeljs.io/)
-    - [React](https://facebook.github.io/react/) for fast modular user interfaces
-    - [Sass](http://sass-lang.com/), [PostCSS](http://postcss.org/) and
-      [Autoprefixer](https://github.com/postcss/autoprefixer) for more convenient styling
-    - [Webpack](https://webpack.github.io/) is used to bundle and minify JavaScript and styles
-    - [SPA] [Razzle](https://razzlejs.org/) for preconfigured isomorphic application
-    - [SPA] Accessible from port `8000` for local development
-
-- Batteries
-
-    - Docker / Docker Compose integration
-    - Linting of Python, JavaScript and Sass code with [Prospector](http://prospector.landscape.io/),
-      [ESLint](http://eslint.org/) and [stylelint](https://stylelint.io/)
-    - Automated code-formatting using [black](https://black.readthedocs.io) and [prettier](https://prettier.io)
-    - [py.test](http://pytest.org/) and [coverage](https://coverage.readthedocs.io/) integration
-    - Deploy helpers, using [Ansible](https://www.ansible.com/)
-    - Media files are stored in a CDN like S3 or Google Cloud Storage
-    - Out-of-the-box configuration for nginx, gunicorn and logrotate
-    - Includes [PyCharm](https://www.jetbrains.com/pycharm/) project config
-
+- Weather Forecasting
+- Responsive CSS
+- Hand-written lazy scrolling
+- Cached api results
+- I18n support
+- Model factories
+- Python type hinting
+- Easy setup/deployment
 
 ## Usage
+
+### Dependencies
+
+- Redis
+- Python Memcahced
+
+The listed dependencies above are needed to run the application.
+
+Please refer to these links to install the dependencies:
+
+- Redis: <https://redis.io/topics/quickstart>
+- Python Memcahced: <https://pypi.org/project/python-memcached/>
+
+### Method 1: Using Poetry
 
 To use this template, first ensure that you have
 [Poetry](https://python-poetry.org/docs/) available.
@@ -53,16 +43,7 @@ After that, you should:
     ```
     poetry install
     ```
-2. Activate the virtualenv created by _poetry_:
-    ```
-    poetry shell
-    ```
-3. Navigate to the directory where you'd like to create your project:
-    ```
-    cd /home/my-awesome-projects/
-    ```
-
-4. Create a new project by executing:
+2. Create a new project by executing:
     ```
     cookiecutter dir/to/django-project-template/
     ```

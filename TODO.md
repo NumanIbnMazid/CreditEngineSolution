@@ -4,4 +4,4 @@
 
 * Add Model Translation
 
-* On-Scroll Lazy Loading
+* On-Scroll Lazy Loading (with infinite scroll)
