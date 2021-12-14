@@ -22,6 +22,8 @@ urlpatterns = i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     path("get-city-data/", get_city_data, name="city_data"),
     path("get-weather-forecast/", WeatherForecastView.as_view(), name="weather_forecast"),
+    # ==============================*** User URLS ***==============================
+    path("users/", include(("users.urls", "users"), namespace="users")),
     prefix_default_language=False
 ) + THIRD_PARTY_URLS
 

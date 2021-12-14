@@ -32,3 +32,5 @@ function setRequestHeader() {
         }
     });
 }
+
+window.CSRF_TOKEN = "{{ csrf_token }}";

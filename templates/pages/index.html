@@ -2,6 +2,7 @@
 
 {% load static %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 
 {% block additional_styles %}
 {{ form.media.css }}
@@ -9,162 +10,169 @@
 
 {% block content %}
 
-<!-- Start Hero Area -->
+<!-- Start Weather Area -->
 <section class="hero-area">
-    {% include "pages/snippets/index/weather-widget.html" %}
-</section>
-<!-- End Hero Area -->
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                <div class="hero-content" id="weather-data">
 
-<!-- Start Services Area -->
+                    <div class="panel panel-default bg-white p-5 weather-panel">
+                        <div class="panel-body" id="weather-data-root">
+                            <div class="row">
+                                <div class="col-md-8 text-left">
+                                    <h3>
+                                        <i class="fa fa-map-marker"></i>
+                                        &nbsp;&nbsp;
+                                        <span id="city" class="weather-tag">{% trans 'Dhaka, BD' %}</span>
+                                    </h3>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <div class="digital-clock">00:00:00</div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div id="display">
+                                <div class="row">
+                                    <div class="col-md-6 text-center" id="weather-icon-display">
+                                        <img src="https://openweathermap.org/img/w/10d.png"
+                                            alt="{% trans 'weather-condition-image' %}" id="condition-icon"
+                                            class="weather-image img-thumbnail p-2 m-2">
+                                        <h6 id="condition" class="text-dark weather-tag">{% trans 'Sunny' %}</h6>
+                                    </div>
+                                    <div class="col-md-6" id="temperature">
+                                        <h4>{% trans 'Today' %} ({% now "jS F Y" %})</h4>
+                                        <div class="row mb-2">
+                                            <div class="col-6">
+                                                <h6 class="text-dark">
+                                                    <span id="temp-farenhite"
+                                                        class="weather-tag">{% trans '73' %}</span>
+                                                    <sup>&deg;<span id="metric">{% trans 'F' %}</span></sup>
+                                                </h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <h6 class="text-dark">
+                                                    <span id="temp-celcius" class="weather-tag">{% trans '23' %}</span>
+                                                    <sup>&deg;<span id="metric">{% trans 'C' %}</span></sup>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <small>
+                                            {% trans 'High' %}:
+                                            <span id="temp-max" class="weather-tag">{% trans '23' %}</span>
+                                            <sup>&deg;
+                                                <span id="metric">{% trans 'C' %}</span>
+                                            </sup> /
+                                            {% trans 'Low' %}:
+                                            <span id="temp-min" class="weather-tag">{% trans '23' %}</span>
+                                            <sup>&deg;
+                                                <span id="metric">{% trans 'C' %}</span>
+                                            </sup>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr id="hr-bottom">
+                            <div class="row" id="weather-condition">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <h6>
+                                        <i class="fas fa-info-circle"></i>
+                                    </h6>
+                                    <small class="text-dark">
+                                        <span id="weather-description" class="weather-tag">{% trans 'clear' %}</span>
+                                    </small>
+                                </div>
+                                <div class="col-md-2">
+                                    <h6>
+                                        <i class="wi wi-humidity"></i>
+                                    </h6>
+                                    <small class="text-dark">
+                                        <span id="humidity" class="weather-tag">{% trans '62' %}</span>%
+                                    </small>
+                                </div>
+                                <div class="col-md-2">
+                                    <h6>
+                                        <i class="fas fa-wind"></i>
+                                    </h6>
+                                    <small class="text-dark">
+                                        <span>{% trans 'wind' %}</span>
+                                        <span id="wind" class="weather-tag">{% trans '0' %}</span>
+                                        <sup>&deg;</sup>
+                                    </small>
+                                </div>
+                                <div class="col-md-2">
+                                    <h6>
+                                        <i class="wi wi-barometer"></i>
+                                    </h6>
+                                    <small class="text-dark">
+                                        <span id="hpa" class="weather-tag">{% trans '1020' %}</span> {% trans 'hPa' %}
+                                    </small>
+                                </div>
+                                <div class="col-md-2">
+                                    <h6>
+                                        <i class="fas fa-thermometer"></i>
+                                    </h6>
+                                    <small class="text-dark">
+                                        <small>{% trans 'feels' %}</small>
+                                        <span id="feels" class="weather-tag">{% trans '23' %}</span>
+                                        <sup>&deg;
+                                            <span id="metric">{% trans 'C' %}</span>
+                                        </sup>
+                                    </small>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="text-center">
+                                <small><i>{% trans 'Data Source' %}: </i></small>
+                                <a href="https://openweathermap.org" target="_blank"><i>openweathermap.org</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <form id="weather-form" name="weatherForm" method="POST">
+                            {% csrf_token %}
+                            <!-- main form -->
+                            {{ form|crispy }}
+
+                            <input type="submit" name="submit" value="Submit" class="d-none">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Weather Area -->
+
+
+<!-- Start Users Area -->
 <div class="services section">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h3 class="wow zoomIn" data-wow-delay=".2s">What we offer</h3>
-                    <h2 class="wow fadeInUp" data-wow-delay=".4s">Our Services</h2>
-                    <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                        Ipsum available, but the majority have suffered alteration in some form.</p>
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">{% trans 'All Users' %}</h2>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
-                <div class="single-service">
-                    <div class="main-icon">
-                        <i class="lni lni-grid-alt"></i>
-                    </div>
-                    <h4 class="text-title">Brand Identity Design</h4>
-                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
-                        market.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
-                <div class="single-service">
-                    <div class="main-icon">
-                        <i class="lni lni-keyword-research"></i>
-                    </div>
-                    <h4 class="text-title">Digital Marketing</h4>
-                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
-                        market.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s">
-                <div class="single-service">
-                    <div class="main-icon">
-                        <i class="lni lni-vector"></i>
-                    </div>
-                    <h4 class="text-title">Design and Development</h4>
-                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
-                        market.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
-                <div class="single-service">
-                    <div class="main-icon">
-                        <i class="lni lni-book"></i>
-                    </div>
-                    <h4 class="text-title">IT Consulting Service</h4>
-                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
-                        market.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
-                <div class="single-service">
-                    <div class="main-icon">
-                        <i class="lni lni-cloud-network"></i>
-                    </div>
-                    <h4 class="text-title">Cloud Computing</h4>
-                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
-                        market.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".6s">
-                <div class="single-service">
-                    <div class="main-icon">
-                        <i class="lni lni-display-alt"></i>
-                    </div>
-                    <h4 class="text-title">Graphics Design</h4>
-                    <p>Invest in Bitcoin on the regular or save with one of the highest interest rates on the
-                        market.</p>
-                </div>
+        <div class="row" id="users">
+            {% include 'users/lazy-list.html' %}
+        </div>
+
+        <div class="text-center m-4">
+            <!-- lazy loader -->
+            <div>
+                <a id="lazyLoadLink" href="javascript:void(0);" data-page="2" class="h5">{% trans 'Load More Users' %}</a>
             </div>
         </div>
+
     </div>
 </div>
-<!-- End Services Area -->
-
-<!-- Start About Area -->
-<section class="about section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-12">
-                <div class="image wow fadeInLeft" data-wow-delay=".2s">
-                    <img src="{% static 'assets/images/about/about-image.jpg' %}" alt="#">
-                </div>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="content wow fadeInRight" data-wow-delay=".4s">
-                    <h4>DECENTRALISED ECONOMY</h4>
-                    <h2>We’ve built a platform to buy and sell shares.</h2>
-                    <p>Spend real fights effective anything extra by leading. Mouthwatering leading how real formula
-                        also locked-in have can mountain thought. Jumbo plus shine sale.</p>
-                    <div class="list">
-                        <div class="single-list">
-                            <div class="list-icon">
-                                <i class="lni lni-checkmark"></i>
-                            </div>
-                            <h4>Digital Marketing</h4>
-                            <p>Quis autem vel eum reprehenderit</p>
-                        </div>
-                        <div class="single-list">
-                            <div class="list-icon">
-                                <i class="lni lni-checkmark"></i>
-                            </div>
-                            <h4>Graphics Desing</h4>
-                            <p>Quis autem vel eum reprehenderit</p>
-                        </div>
-                        <div class="single-list">
-                            <div class="list-icon">
-                                <i class="lni lni-checkmark"></i>
-                            </div>
-                            <h4>Consulting Service</h4>
-                            <p>Quis autem vel eum reprehenderit</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End About Area -->
-
-<!-- Start Call Action Area -->
-<section class="call-action">
-    <div class="container">
-        <div class="inner-content">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-7 col-12">
-                    <div class="text">
-                        <h2>You are using free
-                            <br> <span>Lite version of Craft.</span>
-                        </h2>
-                        <p style="display: block;margin-top: 10px;">Please, purchase full version of the template to
-                            get all pages,
-                            features and commercial license. </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-5 col-12">
-                    <div class="button">
-                        <a href="#" class="btn">Buy Pro Version
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Call Action Area -->
+<!-- End Users Area -->
 
 {% endblock %}
 
@@ -177,6 +185,10 @@
 <!-- END: Ajax Setup-->
 
 <script>
+    // A CSRF token is required when making post requests in Django
+    // To be used for making AJAX requests in script.js
+    window.CSRF_TOKEN = "{{ csrf_token }}";
+
     $(document).ready(function () {
 
         // weather form
@@ -225,6 +237,7 @@
                         .weather[0].icon + ".png")
                 },
                 error: function (response) {
+                    console.log(response)
                     htmlDataObject = {
                         ".weather-tag": "--",
                         "#city": JSON.parse(response.responseText).message
@@ -254,7 +267,7 @@
             // preventing from page reload and default actions
             e.preventDefault()
             // make ajax request
-            ajaxRequest(form=weatherForm)
+            ajaxRequest(form = weatherForm)
         })
 
 
@@ -268,19 +281,50 @@
 
             // set initial city value
             if (currentLanguageCode in cityMap) {
-                $('#id_city').append(new Option(cityMap[currentLanguageCode], cityMap[currentLanguageCode], true, true))
+                $('#id_city').append(new Option(cityMap[currentLanguageCode], cityMap[
+                    currentLanguageCode], true, true))
             } else {
                 $('#id_city').append(new Option("London", "London", true, true))
             }
 
             // make ajax request
-            ajaxRequest(form=weatherForm)
+            ajaxRequest(form = weatherForm)
 
             // prevent form resubmission on page refresh
-            if ( window.history.replaceState ) {
-                window.history.replaceState( null, null, window.location.href )
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href)
             }
         })
+
+        // Users Lazy Loading
+        $('#lazyLoadLink').on('click', function () {
+            var link = $(this);
+            var page = link.data('page');
+
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'users:lazy_load_users' %}",
+                data: {
+                    'page': page,
+                    'csrfmiddlewaretoken': window.CSRF_TOKEN
+                },
+                success: function (data) {
+                    // if there are still more pages to load,
+                    // add 1 to the "Load More Posts" link's page data attribute
+                    // else hide the link
+                    if (data.has_next) {
+                        link.data('page', page + 1);
+                    } else {
+                        link.hide();
+                    }
+                    // append html to the users div
+                    $('#users').append(data.users_html);
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        });
     })
 </script>
 

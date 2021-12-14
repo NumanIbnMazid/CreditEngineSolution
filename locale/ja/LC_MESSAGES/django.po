@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-08 11:47+0600\n"
+"POT-Creation-Date: 2021-12-14 23:32+0600\n"
 "PO-Revision-Date: 2021-12-08 16:24+0000\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,22 +19,437 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Translated-Using: django-rosetta 0.9.7\n"
 
-#: config/views.py:9
-msgid "Welcome to Credit Engine Solution"
-msgstr "クレジットエンジンソリューションへようこそ"
+#: config/forms.py:25
+msgid "City"
+msgstr ""
 
-#: templates/base.html:10
+#: config/forms.py:26
+msgid "Select city"
+msgstr ""
+
+#: config/forms.py:27
+msgid "City is required"
+msgstr ""
+
+#: templates/account/base.html:10 templates/base.html:10
 msgid "Credit Engine Solution || Numan Ibn Mazid"
 msgstr "クレジットエンジンソリューション|| Numan Ibn Mazid"
 
-#: templates/components/header.html:13
+#: templates/account/email.html:6
+msgid "Account"
+msgstr ""
+
+#: templates/account/email.html:13
+msgid "The following e-mail addresses are associated with your account:"
+msgstr ""
+
+#: templates/account/email.html:30
+msgid "[Verified]"
+msgstr ""
+
+#: templates/account/email.html:32
+msgid "[Not Verified]"
+msgstr ""
+
+#: templates/account/email.html:35
+msgid "[Primary]"
+msgstr ""
+
+#: templates/account/email.html:43
+msgid "Make Primary"
+msgstr ""
+
+#: templates/account/email.html:46
+msgid "Re-send Verification"
+msgstr ""
+
+#: templates/account/email.html:49
+msgid "Remove"
+msgstr ""
+
+#: templates/account/email.html:57
+msgid "Warning:"
+msgstr ""
+
+#: templates/account/email.html:63
+msgid "Add E-mail Address"
+msgstr ""
+
+#: templates/account/email.html:69
+msgid "Add E-mail"
+msgstr ""
+
+#: templates/account/email.html:79
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: templates/account/email/base_message.txt:1
+#, python-format
+msgid "Hello from %(site_name)s!"
+msgstr ""
+
+#: templates/account/email/base_message.txt:5
+#: templates/account/email/password_reset_key_message.txt:10
+#, python-format
+msgid ""
+"Thank you for using %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+
+#: templates/account/email/email_confirmation_message.txt:1
+#, python-format
+msgid ""
+"Hello from %(site_name)s!\n"
+"\n"
+"You're receiving this e-mail because user %(user_display)s has given yours "
+"as an e-mail address to connect their account.\n"
+"\n"
+"To confirm this is correct, go to %(activate_url)s\n"
+msgstr ""
+
+#: templates/account/email/email_confirmation_message.txt:7
+#, python-format
+msgid ""
+"Thank you from %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+
+#: templates/account/email/email_confirmation_subject.txt:3
+msgid "Please Confirm Your E-mail Address"
+msgstr ""
+
+#: templates/account/email/password_reset_key_message.txt:1
+#, python-format
+msgid ""
+"Hello from %(site_name)s!\n"
+"\n"
+"You're receiving this e-mail because you or someone else has requested a "
+"password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
+msgstr ""
+
+#: templates/account/email/password_reset_key_message.txt:8
+#, python-format
+msgid "In case you forgot, your username is %(username)s."
+msgstr ""
+
+#: templates/account/email/password_reset_key_subject.txt:3
+msgid "Password Reset E-mail"
+msgstr ""
+
+#: templates/account/email_confirm.html:7
+msgid "Confirm E-mail Address"
+msgstr ""
+
+#: templates/account/email_confirm.html:17
+#, python-format
+msgid ""
+"Please confirm that \n"
+"        <a href=\"mailto:%(email)s\">%(email)s</a>\n"
+"        is an e-mail address for user %(user_display)s."
+msgstr ""
+
+#: templates/account/email_confirm.html:23
+msgid "Confirm"
+msgstr ""
+
+#: templates/account/email_confirm.html:31
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue\n"
+"            a new e-mail confirmation request</a>."
+msgstr ""
+
+#: templates/account/login.html:19 templates/components/header.html:63
+msgid "Login"
+msgstr ""
+
+#: templates/account/login.html:28
+msgid "Forgot password?"
+msgstr ""
+
+#: templates/account/login.html:32
+msgid "Don't have an account?"
+msgstr ""
+
+#: templates/account/login.html:34 templates/components/header.html:58
+msgid "Signup"
+msgstr ""
+
+#: templates/account/logout-modal.html:11
+msgid "Ready to Leave?"
+msgstr ""
+
+#: templates/account/logout-modal.html:17
+msgid "Select \"Logout\" below if you are ready to end your current session."
+msgstr ""
+
+#: templates/account/logout-modal.html:23
+msgid "Cancel"
+msgstr ""
+
+#: templates/account/logout-modal.html:26 templates/account/logout.html:16
+msgid "Yes, Logout"
+msgstr ""
+
+#: templates/account/logout.html:5 templates/components/header.html:90
+msgid "Logout"
+msgstr ""
+
+#: templates/account/logout.html:8
+msgid "Are you sure you want to logout?"
+msgstr ""
+
+#: templates/account/messages/cannot_delete_primary_email.txt:2
+#, python-format
+msgid "You cannot remove your primary e-mail address (%(email)s)."
+msgstr ""
+
+#: templates/account/messages/email_confirmation_sent.txt:2
+#, python-format
+msgid "Confirmation e-mail sent to %(email)s."
+msgstr ""
+
+#: templates/account/messages/email_confirmed.txt:2
+#, python-format
+msgid "You have confirmed %(email)s."
+msgstr ""
+
+#: templates/account/messages/email_deleted.txt:2
+#, python-format
+msgid "Removed e-mail address %(email)s."
+msgstr ""
+
+#: templates/account/messages/logged_in.txt:4
+#, python-format
+msgid "Successfully signed in as %(name)s."
+msgstr ""
+
+#: templates/account/messages/logged_out.txt:2
+msgid "You have signed out."
+msgstr ""
+
+#: templates/account/messages/password_changed.txt:2
+msgid "Password successfully changed."
+msgstr ""
+
+#: templates/account/messages/password_set.txt:2
+msgid "Password successfully set."
+msgstr ""
+
+#: templates/account/messages/primary_email_set.txt:2
+msgid "Primary e-mail address set."
+msgstr ""
+
+#: templates/account/messages/unverified_primary_email.txt:2
+msgid "Your primary e-mail address must be verified."
+msgstr ""
+
+#: templates/account/password_change.html:6
+#: templates/account/password_change.html:15
+#: templates/account/password_reset_from_key.html:5
+#: templates/account/password_reset_from_key.html:10
+#: templates/account/password_reset_from_key.html:24
+#: templates/account/password_reset_from_key_done.html:5
+#: templates/components/header.html:86
+msgid "Change Password"
+msgstr ""
+
+#: templates/account/password_reset.html:7
+#: templates/account/password_reset_done.html:7
+msgid "Password Reset"
+msgstr ""
+
+#: templates/account/password_reset.html:25
+msgid "Reset My Password"
+msgstr ""
+
+#: templates/account/password_reset.html:29
+msgid ""
+"\n"
+"    Please contact us if you have any trouble resetting your password.\n"
+"    "
+msgstr ""
+
+#: templates/account/password_reset_done.html:17
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few\n"
+"    minutes."
+msgstr ""
+
+#: templates/account/password_reset_from_key.html:10
+msgid "Bad Token"
+msgstr ""
+
+#: templates/account/password_reset_from_key.html:15
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.\n"
+"    Please request a <a href=\"%(passwd_reset_url)s\">new password reset</a>."
+msgstr ""
+
+#: templates/account/password_reset_from_key.html:28
+#: templates/account/password_reset_from_key_done.html:10
+msgid "Your password is now changed."
+msgstr ""
+
+#: templates/account/password_set.html:6 templates/account/password_set.html:11
+#: templates/account/password_set.html:16
+msgid "Set Password"
+msgstr ""
+
+#: templates/account/signup_closed.html:6
+#: templates/account/signup_closed.html:11
+msgid "Sign Up Closed"
+msgstr ""
+
+#: templates/account/signup_closed.html:13
+msgid "We are sorry, but the sign up is currently closed."
+msgstr ""
+
+#: templates/account/snippets/already_logged_in.html:5
+msgid "Note"
+msgstr ""
+
+#: templates/account/snippets/already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr ""
+
+#: templates/account/verification_sent.html:6
+#: templates/account/verification_sent.html:11
+#: templates/account/verified_email_required.html:6
+#: templates/account/verified_email_required.html:11
+msgid "Verify Your E-mail Address"
+msgstr ""
+
+#: templates/account/verified_email_required.html:15
+msgid ""
+"This part of the site requires us to verify that\n"
+"    you are who you claim to be. For this purpose, we require that you\n"
+"    verify ownership of your e-mail address. "
+msgstr ""
+
+#: templates/account/verified_email_required.html:19
+msgid ""
+"We have sent an e-mail to you for\n"
+"    verification. Please click on the link inside this e-mail. Please\n"
+"    contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: templates/account/verified_email_required.html:23
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail\n"
+"        address</a>."
+msgstr ""
+
+#: templates/components/header.html:17
 msgid "CreditEngineSolution"
 msgstr "CreditEngineSolution"
 
-#: templates/components/header.html:25
+#: templates/components/header.html:29
 msgid "Home"
 msgstr "家"
 
-#: templates/components/header.html:28
+#: templates/components/header.html:32
 msgid "About"
 msgstr "だいたい"
+
+#: templates/components/header.html:77
+msgid "Admin"
+msgstr ""
+
+#: templates/components/header.html:83
+msgid "Manage Account"
+msgstr ""
+
+#: templates/pages/index.html:27
+msgid "Dhaka, BD"
+msgstr ""
+
+#: templates/pages/index.html:39
+msgid "weather-condition-image"
+msgstr ""
+
+#: templates/pages/index.html:41
+msgid "Sunny"
+msgstr ""
+
+#: templates/pages/index.html:44
+msgid "Today"
+msgstr ""
+
+#: templates/pages/index.html:49
+msgid "73"
+msgstr ""
+
+#: templates/pages/index.html:50
+msgid "F"
+msgstr ""
+
+#: templates/pages/index.html:55 templates/pages/index.html:62
+#: templates/pages/index.html:67 templates/pages/index.html:117
+msgid "23"
+msgstr ""
+
+#: templates/pages/index.html:56 templates/pages/index.html:64
+#: templates/pages/index.html:69 templates/pages/index.html:119
+msgid "C"
+msgstr ""
+
+#: templates/pages/index.html:61
+msgid "High"
+msgstr ""
+
+#: templates/pages/index.html:66
+msgid "Low"
+msgstr ""
+
+#: templates/pages/index.html:82
+msgid "clear"
+msgstr ""
+
+#: templates/pages/index.html:90
+msgid "62"
+msgstr ""
+
+#: templates/pages/index.html:98
+msgid "wind"
+msgstr ""
+
+#: templates/pages/index.html:99
+msgid "0"
+msgstr ""
+
+#: templates/pages/index.html:108
+msgid "1020"
+msgstr ""
+
+#: templates/pages/index.html:108
+msgid "hPa"
+msgstr ""
+
+#: templates/pages/index.html:116
+msgid "feels"
+msgstr ""
+
+#: templates/pages/index.html:126
+msgid "Data Source"
+msgstr ""
+
+#: templates/pages/index.html:158
+msgid "All Users"
+msgstr ""
+
+#: templates/pages/index.html:169
+msgid "Load More Users"
+msgstr ""
+
+#~ msgid "Welcome to Credit Engine Solution"
+#~ msgstr "クレジットエンジンソリューションへようこそ"

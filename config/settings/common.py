@@ -225,18 +225,22 @@ ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Credit Engine Solution Account Confirmation'
 """
 ----------------------- * Django Cors Header Configurations * -----------------------
 """
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-    "http://127.0.0.1:9000",
-    "http://127.0.0.1:8000",
-    "http://0.0.0.0:8000",
-    "http://0.0.0.0:9000",
-    # open weather
-    "https://api.openweathermap.org",
-    "http://api.openweathermap.org",
-    "https://openweathermap.org",
-    "http://openweathermap.org",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:8080",
+#     "http://127.0.0.1:9000",
+#     "http://127.0.0.1:8000",
+#     "http://0.0.0.0:8000",
+#     "http://0.0.0.0:9000",
+#     # open weather
+#     "https://creditenginesolution.herokuapp.com",
+#     "http://creditenginesolution.herokuapp.com",
+#     "https://api.openweathermap.org",
+#     "http://api.openweathermap.org",
+#     "https://openweathermap.org",
+#     "http://openweathermap.org",
+# ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_METHODS = [
     "DELETE",

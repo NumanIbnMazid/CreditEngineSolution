@@ -1,4 +1,4 @@
-# Thorgate's Django template
+# Credit Engine Solution
 
 [![Build status](https://gitlab.com/thorgate-public/django-project-template/badges/master/pipeline.svg)](https://gitlab.com/thorgate-public/django-project-template/commits/master)
 

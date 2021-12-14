@@ -7,10 +7,12 @@ import os
 import requests
 from django.core.cache import cache
 import re
+from django.contrib.auth import get_user_model
 # forms
 from .forms import WeatherForm
 
 
+# @csrf_exempt
 class WeatherForecastView(View):
     API_KEY = os.environ.get('WEATHER_API_KEY')
     WEATHER_API = "https://api.openweathermap.org/data/2.5/weather?q={CITY_NAME}&appid={API_KEY}&lang={lang}"
@@ -62,6 +64,7 @@ class WeatherForecastView(View):
                         return JsonResponse(responseJson, status=400)
             return JsonResponse({"message": "Something went wrong!"}, status=400)
         except Exception as e:
+            print("****** Exception ******* \n", e)
             return JsonResponse({"message": str(e)}, status=400)
 
 
@@ -78,4 +81,5 @@ class HomePageView(View):
     def get_context_data(self, **kwargs):
         context = {}
         context["form"] = WeatherForm
+        context["user_list"] = get_user_model().objects.all()[:6]
         return context
