@@ -1,56 +1,41 @@
-version: '3.7'
+version: '3.6'
 
 services:
   web:
-    build: . #build the image for the web service from the dockerfile in parent directory
-    command: sh -c "python manage.py makemigrations &&
-                    python manage.py migrate &&
-                    python manage.py initiate_admin &&
-                    python manage.py collectstatic --noinput &&
-                    gunicorn config.wsgi:application --bind 0.0.0.0:${PORT}"
+    build: .
+    # command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - .:/creditengine:rw # map data and files from parent directory in host to creditengine directory in docker containe
-      - static_volume:/app/static
-    env_file:
-      - .env
-    environment:
-      - REDIS_HOST=redis
-      - DB_HOST=db
-    image: sampleapp
-
+      - .:/usr/src/
     expose:
-      - ${PORT}
-    restart: "on-failure"
+      - 8000
+    env_file: .env
     depends_on:
       - db
   db:
-    image: postgres:11-alpine
+    image: postgres:11.5-alpine
+    restart: always
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - postgres_data:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
-      - PGPORT=${DB_PORT}
-      - POSTGRES_USER=${DB_USER}
-    restart: "on-failure"
+      - ./postgres_data:/var/lib/postgresql/data/
+    env_file: .env
+    ports:
+      - 5432:5432
   redis:
-    container_name: 'redis'
     image: redis:alpine
     ports:
-      - '6378:6379'
-    volumes:
-      - 'redisdata:/data'
-    restart: "on-failure"
+      - 6379:6379
   memcached:
     container_name: 'memcached'
     image: 'memcached:latest'
     ports:
       - "11212:11211"
     restart: "on-failure"
-
+  nginx:
+    build: ./nginx
+    ports:
+      - 8000:80
+    depends_on:
+      - web
 
 volumes:
   postgres_data:
-  static_volume:
-  redisdata:
