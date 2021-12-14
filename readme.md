@@ -43,9 +43,9 @@ After that, you should:
     ```
     poetry install
     ```
-2. Create a new project by executing:
+2. Run the project
     ```
-    cookiecutter dir/to/django-project-template/
+    poetry run python manage.py runserver
     ```
 
 
