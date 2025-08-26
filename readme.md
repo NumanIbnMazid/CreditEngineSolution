@@ -1,7 +1,5 @@
 # Credit Engine Solution
 
-[Live URL](https://creditenginesolution.herokuapp.com/) : <https://creditenginesolution.herokuapp.com/>
-
 ## Modules
 
 - Weather Module
